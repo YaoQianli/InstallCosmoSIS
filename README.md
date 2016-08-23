@@ -89,7 +89,7 @@ python的东西anaconda里面都有，再按照cosmosis网站上介绍的安装e
 
 3 setup script里面，Edit the new file setup-my-cosmosis也蛮麻烦的，附上我的setup-my-cosmosis
 
-#This script is only used if you did a manual installation of CosmoSIS;
+%#This script is only used if you did a manual installation of CosmoSIS;
 
 #i.e. if you did not use the "bootstrap" script and have no "ups" directory
 
