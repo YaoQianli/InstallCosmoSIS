@@ -147,3 +147,22 @@ export PYTHONPATH=${COSMOSIS_SRC_DIR}:${PYTHONPATH}
 export PATH=${COSMOSIS_SRC_DIR}/bin:/usr/bin/gcc:~/anaconda2/bin/python:${PATH}
 
 
+------------------------------------------
+
+其中那几个软件包都是在安装时用--prefix选择的位置
+
+gcc/python的位置用which gcc/python得到
+
+libgfortran的位置用rpm -ql libgfortran
+
+之后在对cosmosis进行make时，libgfortran出错，使用conda update libgfortran进行修复
+
+网上另一修复办法为
+
+conda remove libgfortran
+
+conda install libgcc --force
+
+------------------------------------
+
+回到cosmosis网页完成安装，make成功，cosmosis demos/demo1.ini成功
