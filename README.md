@@ -89,28 +89,28 @@ python的东西anaconda里面都有，再按照cosmosis网站上介绍的安装e
 
 3 setup script里面，Edit the new file setup-my-cosmosis也蛮麻烦的，附上我的setup-my-cosmosis
 
-%#This script is only used if you did a manual installation of CosmoSIS;
+#This script is only used if you did a manual installation of CosmoSIS;
 
-%#i.e. if you did not use the "bootstrap" script and have no "ups" directory
+#i.e. if you did not use the "bootstrap" script and have no "ups" directory
 
 
-%#See the wiki https://bitbucket.org/joezuntz/cosmosis/wiki/edit/Manual%20Install
+#See the wiki https://bitbucket.org/joezuntz/cosmosis/wiki/edit/Manual%20Install
 
-%#on how to change and use this file
+#on how to change and use this file
 
 
 
 export COSMOSIS_SRC_DIR=$HOME/cosmosis
 
 
-%#The gnu science library
+#The gnu science library
 
 export GSL_INC=$HOME/lib/gsl/include
 
 export GSL_LIB=$HOME/lib/gsl/lib
 
 
-%#The cfitsio FITS library
+#The cfitsio FITS library
 
 export CFITSIO_INC=$HOME/lib/cfitsio/include
 
@@ -123,20 +123,20 @@ export FFTW_INC_DIR=$HOME/lib/fftw/include
 
 
 
-%#The lapack linear algebra package
+#The lapack linear algebra package
 
-%#On a mac this should just say "-framework Accelerate" or "-framework veclib" if that doesn't work
+#On a mac this should just say "-framework Accelerate" or "-framework veclib" if that doesn't work
 
 export LAPACK_LINK="-L ~/InstallCosmosis/lapack-3.6.1/liblapack.a -llapack -lblas"
 
 
 
-%#You may need to add :${DYLD_LIBRARY_PATH} to the end of this
+#You may need to add :${DYLD_LIBRARY_PATH} to the end of this
 
 export DYLD_LIBRARY_PATH=/usr/lib64/libgfortran.so.3.0.0:${COSMOSIS_SRC_DIR}/cosmosis/datablock/:${COSMOSIS_SRC_DIR}/cosmosis-standard-library/likelihood/:${COSMOSIS_SRC_DIR}/cosmosis-standard-library/likelihood/planck/plc-1.0/lib/:${COSMOSIS_SRC_DIR}/cosmosis-standard-library/likelihood/planck2015/plc-2.0/lib/
 
 
-%#You may need to add :${LD_LIBRARY_PATH} to the end of this
+#You may need to add :${LD_LIBRARY_PATH} to the end of this
 
 export LD_LIBRARY_PATH=/usr/lib64/libgfortran.so.3.0.0:${COSMOSIS_SRC_DIR}/cosmosis/datablock/:${COSMOSIS_SRC_DIR}/cosmosis-standard-library/likelihood/planck/plc-1.0/lib/:${COSMOSIS_SRC_DIR}/cosmosis-standard-library/likelihood/planck2015/plc-2.0/lib/
 
@@ -149,7 +149,7 @@ export PATH=${COSMOSIS_SRC_DIR}/bin:/usr/bin/gcc:~/anaconda2/bin/python:${PATH}
 
 ------------------------------------------
 
-其中那几个软件包都是在安装时用--prefix选择的位置
+其中那几个软件包都是在安装时用--prefix选择的位置，lapack不知道怎么选择位置，装在了安装包文件夹下
 
 gcc/python的位置用which gcc/python得到
 
