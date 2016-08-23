@@ -85,4 +85,65 @@ make
 
 ------------------------------------------
 
+python的东西anaconda里面都有，再按照cosmosis网站上介绍的安装emcee，下载cosmosis主体
+
+3 setup script里面，Edit the new file setup-my-cosmosis也蛮麻烦的，附上我的setup-my-cosmosis
+
+#This script is only used if you did a manual installation of CosmoSIS;
+
+#i.e. if you did not use the "bootstrap" script and have no "ups" directory
+
+
+#See the wiki https://bitbucket.org/joezuntz/cosmosis/wiki/edit/Manual%20Install
+
+#on how to change and use this file
+
+
+
+export COSMOSIS_SRC_DIR=$HOME/cosmosis
+
+
+#The gnu science library
+
+export GSL_INC=$HOME/lib/gsl/include
+
+export GSL_LIB=$HOME/lib/gsl/lib
+
+
+#The cfitsio FITS library
+
+export CFITSIO_INC=$HOME/lib/cfitsio/include
+
+export CFITSIO_LIB=$HOME/lib/cfitsio/lib
+
+
+export FFTW_LIBRARY=$HOME/lib/fftw/lib
+
+export FFTW_INC_DIR=$HOME/lib/fftw/include
+
+
+
+#The lapack linear algebra package
+
+#On a mac this should just say "-framework Accelerate" or "-framework veclib" if that doesn't work
+
+export LAPACK_LINK="-L ~/InstallCosmosis/lapack-3.6.1/liblapack.a -llapack -lblas"
+
+
+
+#You may need to add :${DYLD_LIBRARY_PATH} to the end of this
+
+export DYLD_LIBRARY_PATH=/usr/lib64/libgfortran.so.3.0.0:${COSMOSIS_SRC_DIR}/cosmosis/datablock/:${COSMOSIS_SRC_DIR}/cosmosis-standard-library/likelihood/:${COSMOSIS_SRC_DIR}/cosmosis-standard-library/likelihood/planck/plc-1.0/lib/:${COSMOSIS_SRC_DIR}/cosmosis-standard-library/likelihood/planck2015/plc-2.0/lib/
+
+
+#You may need to add :${LD_LIBRARY_PATH} to the end of this
+
+export LD_LIBRARY_PATH=/usr/lib64/libgfortran.so.3.0.0:${COSMOSIS_SRC_DIR}/cosmosis/datablock/:${COSMOSIS_SRC_DIR}/cosmosis-standard-library/likelihood/planck/plc-1.0/lib/:${COSMOSIS_SRC_DIR}/cosmosis-standard-library/likelihood/planck2015/plc-2.0/lib/
+
+
+
+export PYTHONPATH=${COSMOSIS_SRC_DIR}:${PYTHONPATH}
+
+export PATH=${COSMOSIS_SRC_DIR}/bin:/usr/bin/gcc:~/anaconda2/bin/python:${PATH}
+
 
